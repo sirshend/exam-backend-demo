@@ -14,6 +14,7 @@ from ecdsa import SigningKey, SECP256k1
 ## Integrate the blockchain here. 
 ##
 
+
 @api_view(['POST'])
 def register_user(request):
     serializer = UserRegistrationSerializer(data=request.data)
@@ -63,6 +64,9 @@ def register_user(request):
     else:
         # Return validation error response
         return Response(serializer.errors, status=400)
+
+
+
 @api_view(['POST'])
 def login_user(request):
     serializer = UserLoginSerializer(data=request.data)
@@ -113,6 +117,7 @@ def login_user(request):
     else:
         # Return validation error response
         return Response(serializer.errors, status=400)
+
 
 
 @api_view(['POST'])
@@ -174,6 +179,7 @@ def apply_for_exam(request):
     else:
         # Return validation error response
         return Response(serializer.errors, status=400)
+
 
 
 @api_view(['POST'])
